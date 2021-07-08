@@ -80,4 +80,5 @@ https://www.freecodecamp.org/news/discord-ai-chatbot/ (How to Build the Chatbot 
  - Option to opt-out of uploading to Hugging Face
  - Add support for importing SMS messages
  - Fix issue where loading bars designed for Colab do not display status properly (IProgress / ipywidgets)
+ - Remove all unnecessary Google Colab portions of the script
 
