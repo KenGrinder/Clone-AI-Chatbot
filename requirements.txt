@@ -1,0 +1,11 @@
+tqdm
+torch
+pandas
+tensorboard==2.1.0
+numpy==1.16.4
+sklearn==0.0
+sklearn-pandas==1.8.0
+IProgress
+ipywidgets
+transformers
+trange
