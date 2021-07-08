@@ -5,9 +5,9 @@
 
 
 *This is a fork of the Discord AI chatbot Google Colab found here:
-https://github.com/RuolinZheng08/twewy-discord-chatbot
+https://github.com/RuolinZheng08/twewy-discord-chatbot*
 
-A special thanks to [Odin](https://github.com/odinmay) for all the help creating this!*
+*A special thanks to [Odin](https://github.com/odinmay) for all the help creating this!*
 
 
 
