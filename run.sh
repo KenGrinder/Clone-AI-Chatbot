@@ -1,4 +1,5 @@
 clear
+apt-get install unzip
 read -r -p "Would you like to import Facebook Data? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
 	then read -r -p "Have you copied your Facebook JSON zip to the root of this folder? [y/N] " response
@@ -29,6 +30,8 @@ fi
 rm -rf MergedJson
 rm -rf inbox
 echo You will have to enter your Hugging Face credentials
+echo What is your Hugging Face email?
+read email
 echo What is your Hugging Face username?
 read username
 echo What is your Hugging Face password?..... Will be sent via HTTPS, change password if it contains special characters.
@@ -56,8 +59,12 @@ pip install -r requirements.txt
 python3 modeltrain.py "microsoft/DialoGPT-$modelsize"
 
 #Bottom of script to send finished model to Hugging Face
+apt-get install git
+apt-get install git-lfs
 git lfs install
 git config --global credential.helper store
+git config --global user.name "'$username'"
+git config --global user.email $email
 git clone https://$username:$password@huggingface.co/$username/$model
 ls
 cp -r CozyPlace/output/*.* $model/
