@@ -57,6 +57,11 @@ Copy Facebook .zip file into Clone-AI-Chatbot directory.
 Make the script executable.
 
     chmod +x run.sh
+    
+Run the script:
+
+
+    ./run.sh
 
 Follow the prompts.
 
