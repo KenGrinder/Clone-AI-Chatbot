@@ -66,6 +66,11 @@ Run the script:
 Follow the prompts.
 
 
+To deploy your bot onto Discord, follow the instructions provided at the end of the page here:
+https://www.freecodecamp.org/news/discord-ai-chatbot/ (How to Build the Chatbot section)
+
+
+
 
 
 ## TO-DO
