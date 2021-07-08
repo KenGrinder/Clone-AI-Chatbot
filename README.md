@@ -1,34 +1,70 @@
-# Build a Discord AI Chatbot that Speaks like Your Favorite Character!
 
-<div align="center">
-  <img src="https://github.com/RuolinZheng08/twewy-discord-chatbot/blob/main/gif-demo/icon.png" width=200>
-</div>
 
-This is a Discord AI Chatbot that uses the [Microsoft DialoGPT conversational model](https://huggingface.co/microsoft/DialoGPT-medium) fine-tuned on the game transcript of [The World Ends With You](https://en.wikipedia.org/wiki/The_World_Ends_with_You) (TWEWY). Read [my tutorial on freeCodeCamp](https://www.freecodecamp.org/news/discord-ai-chatbot/) or watch [my video tutorial on YouTube](https://youtu.be/UBwvFuTC1ZE). I've also made [a JavaScript version of the tutorial using Discord.js](https://youtu.be/XR6JFRLxe5A).
+## AI Chatbot
 
-I trained the model using the lines of my favorite quirky character, Joshua (left in the image below). He has about 700 lines in total in the entire game.
 
-<img src="https://github.com/RuolinZheng08/twewy-discord-chatbot/blob/main/gif-demo/gameplay.png" width=400><br>
 
-Here is a demo of the Discord bot in action.
+*This is a fork of the Discord AI chatbot Google Colab found here:
+https://github.com/RuolinZheng08/twewy-discord-chatbot
+A special thanks to [Odin](https://github.com/odinmay) for all the help creating this!*
 
-<img src="https://github.com/RuolinZheng08/twewy-discord-chatbot/blob/main/gif-demo/discord.gif" width=500><br>
 
-You can also directly chat with the model hosted on [Hugging Face's Model Hub](https://huggingface.co/r3dhummingbird/DialoGPT-medium-joshua).
 
-<img src="https://github.com/RuolinZheng08/twewy-discord-chatbot/blob/main/gif-demo/huggingface.gif" width=400><br>
 
-## Structure of this Project
 
-- `model_train_upload_workflow.ipyb`: Notebook to be run in Google Colab to train and upload the model to Hugging Face's Model Hub
-- `discord_bot.py`: Script to be imported into a Repl.it Python Discord.py project
-- `discord_bot.js`: Script to be imported into a Repl.it JavaScript Discord.js project
 
-## Resource Links
 
-- [15-min chat demo](https://youtu.be/-n6uWu8PZzo)
-- [My tutorial on freeCodeCamp](https://www.freecodecamp.org/news/discord-ai-chatbot/)
-- [My video tutorial on YouTube](https://youtu.be/UBwvFuTC1ZE)
-- [My JavaScript version of this tutorial on YouTube](https://youtu.be/XR6JFRLxe5A)
-- [My TWEWY dataset on Kaggle](https://www.kaggle.com/ruolinzheng/twewy-game-script)
-- [My Hugging Face Model](https://huggingface.co/r3dhummingbird/DialoGPT-medium-joshua)
+## Create a Discord bot that talks like you!
+
+
+
+This is a Discord AI Chatbot that uses the Microsoft DialoGPT conversational model fine-tuned on message data from your Facebook.
+Using the export data function within Facebook, these scripts will train the model to speak like you do!
+Be warned, using Facebook Message data can cause the bot to potentially repeat anything you've said over messenger.
+
+
+The purpose of this script, was to run the training model outside of Google colab on a beefier GPU for a larger data set and larger model (I was getting GPU memory errors with my 30,000+ lines of conversation data even after lowering batch sizes)
+
+The other intention was to completely automate this script with questions at the beginning, allow it to upload itself to Hugging Face after the scrip runs. This allows you to use a service such as vast.ai to rent a gpu while this script does everything for you so you don't waste any rented time. It also will automatically parse Facebook JSON data, and remove emojis / werid characters.
+
+***NOTE:** This script does ask for Hugging Face login credentials to create/upload for you. All information is saved as variables for the script locally.*
+
+
+
+
+## Usage:
+
+ **Download Facebook data from Facebook**
+
+ - Download your Facebook Data
+ - Open your Facebook and go into Settings & Privacy > Settings
+ - Go to Your Facebook Information > Download Your Information
+ - Select the data range “All of my data”, format “JSON” and Media
+   Quality “Low” (Media quality is for the pictures and not needed)
+ - Select Messages
+ - Click on Create File
+
+This will create a zip file for download. This can take anywhere from minutes to a day depending on how much data you have.
+
+
+## Clone AI Chatbot
+
+    git clone https://github.com/KenGrinder/Clone-AI-Chatbot.git
+
+Copy Facebook .zip file into Clone-AI-Chatbot directory.
+
+Make the script executable.
+
+    chmod +x run.sh
+
+Follow the prompts.
+
+
+
+
+## TO-DO
+
+ - Figure out why *tokenizer.json* not being saved
+ - Option to opt-out of uploading to Hugging Face
+ - Add support for importing SMS messages
+
