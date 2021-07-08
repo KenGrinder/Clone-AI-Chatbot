@@ -51,6 +51,7 @@ This will create a zip file for download. This can take anywhere from minutes to
 ## Clone AI Chatbot
 
     git clone https://github.com/KenGrinder/Clone-AI-Chatbot.git
+    cd Clone-AI-Chatbot
 
 Copy Facebook .zip file into Clone-AI-Chatbot directory.
 
