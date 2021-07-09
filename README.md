@@ -48,6 +48,12 @@ The other intention was to completely automate this script with questions at the
 This will create a zip file for download. This can take anywhere from minutes to a day depending on how much data you have.
 
 
+## Requirements
+    
+    apt-get install unzip
+    apt-get install git
+    apt-get install git-lfs
+
 ## Clone AI Chatbot
 
     git clone https://github.com/KenGrinder/Clone-AI-Chatbot.git
