@@ -72,8 +72,8 @@ class Args():
         self.do_train = True
         self.do_eval = True
         self.evaluate_during_training = False
-        self.per_gpu_train_batch_size = 5
-        self.per_gpu_eval_batch_size = 5
+        self.per_gpu_train_batch_size = 1
+        self.per_gpu_eval_batch_size = 1
         self.gradient_accumulation_steps = 1
         self.learning_rate = 5e-5
         self.weight_decay = 0.0
@@ -110,7 +110,7 @@ n = 7
 # Split Up Messages for model #
 for i in range(n, len(all_fbmessages['line'])):
     row = []
-    prev = i - 1 - n  # we additionally substract 1, so row will contain current response and 7 previous responses
+    prev = i - 1 - n  # we additionally subtract 1, so row will contain current response and 7 previous responses
     for j in range(i, prev, -1):
         row.append(all_fbmessages['line'][j])
     contexted.append(row)
@@ -121,8 +121,8 @@ columns = columns + ['context/' + str(i) for i in range(n - 1)]
 df = pd.DataFrame.from_records(contexted, columns=columns)
 
 # Set Training Dataframe #
-trn_df, val_df = train_test_split(df, test_size=0.1)
-
+trn_df, val_df = train_test_split(df, test_size=0.2)
+trn_df.head()
 
 
 def construct_conv(row, tokenizer, eos=True):
